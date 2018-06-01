@@ -2,7 +2,7 @@ BuildLog Stepper Shield
 
 http://www.buildlog.net/blog/2011/08/stepper-driver-arduino-shield/
 
-http://www.buildlog.net/documents/
+http://www.buildlog.net/wiki/doku.php?id=elec:4xshield
 
 Also see the following for the Rev 3.X board artwork:
 
