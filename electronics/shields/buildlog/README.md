@@ -12,8 +12,8 @@ Note, rev 3.01: boards that read "rev 3.01" have the silkscreen error corrected.
 
 https://www.shapeoko.com/wiki/index.php/Dual_Motor#Instructions_for_Buildlog_Stepper_Shield_rev.3
 
-When wiring the terminal blocks to the steppers, use the following convention:
-(Pin 1 is on the left of the block)
+When wiring the BuildLog terminal blocks to the steppers, use the following convention:
+(Pin 1 is on the left of the block, wire pairs are 1A/1B and 2A/2B)
 
 Driver | Shield | Pin | Color
 --- | --- | --- | ---
@@ -21,3 +21,13 @@ A~ | 1B | 1 | White
 A | 1A | 2 | Red
 B | 2A | 3 | Green
 B~ | 2B | 4 | Black
+
+This is different than the gShield naming and order
+(Pin 1 is on the left of the block, wire pairs are A1/A2 and B1/B2)
+
+Driver | Shield | Pin | Color
+--- | --- | --- | ---
+A | A1 | 1 | Red
+A~ | A2 | 2 | White
+B | B1| 3 | Green
+B~ | B2 | 4 | Black
