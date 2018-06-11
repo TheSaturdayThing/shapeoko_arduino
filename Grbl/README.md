@@ -19,4 +19,7 @@ The recommended installation method is via the Arduino IDE:
 - Open the example sketch "File -> Examples -> grbl -> GrblUpload"
 - Connect to the Arduino and run the sketch to compile and upload Grbl to the Arduino.
 
-IMPORTANT: When accessing Grbl via UGS (Universal Gcode Sender), you can use the command '$RST=*' to clear the EEPROM and enable default settings; otherwise, any earlier Grbl settings will be used.
+See https://github.com/TheSaturdayThing/shapeoko_arduino/tree/master/UGS for additional Grbl settings
+
+IMPORTANT: The Arduino EEPROM preserves settings from any previous installs. To clear the EEPROM and enable new default settings, you can use UGS (Universal Gcode Sender) to access the Arduino and issue the command '$RST=*' 
+
