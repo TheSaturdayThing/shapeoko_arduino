@@ -1,15 +1,22 @@
-Versions:
-- v1.1f: GRBL_VERSION_BUILD "20170801": latest version installed on Shapeoko 1 converted to X-Carve with BuildLog shield
-- v0.8c: older version used on original Shapeoko 1 with GrblShield
+Grbl Versions:
+- v1.1f: GRBL_VERSION_BUILD "20170801": latest version for Shapeoko 1 converted to X-Carve with BuildLog shield
+- v0.8c: older version that was used on original Shapeoko 1 with GrblShield
 
-Note on XYZ limit switches:
-By default PWM spindle control is enabled, so Z limit is now on pin D12 instead of D11.
-X and Y Limit continue to be on pins D9 and D10.
+The recommended installation method is via the Arduino IDE:
+- See: https://github.com/gnea/grbl/wiki/Compiling-Grbl
+- Before starting, delete any prior Grbl library installations from the Arduino IDE. Otherwise, you'll have compiling issues!
+- Manually load the grbl folder into the Arduino IDE as a Library.
+  - See https://www.arduino.cc/en/guide/libraries
+  - Download the Grbl source code ZIP file from github
+  - Unpack the zip file.
+  - Copy the 'grbl' directory from 'master-grbl' code into your Arduino sketchbook's 'libraries' directory. 
+- Make required machine customizations to the library copy of config.h 
+  - Change CPU pin map and default settings from "DEFAULTS_GENERIC" to "DEFAULTS_X_CARVE_500MM"   
+- Update the library copy of defaults.h file if required
+  - By default PWM spindle control is enabled, so Z limit will be on pin D12 instead of D11.
+  - X limit is still on D9, Y limit is still on D10
+- Launch the Arduino IDE and verify that 'grbl' is shown under "Sketch -> Include Library -> Contributed libraries"
+- Open the example sketch "File -> Examples -> grbl -> GrblUpload"
+- Connect to the Arduino and run the sketch to compile and upload Grbl to the Arduino.
 
-From Defaults.h:
-
-// Enables variable spindle output voltage for different RPM values. On the Arduino Uno, the spindle
-// enable pin will output 5V for maximum RPM with 256 intermediate levels and 0V when disabled.
-// NOTE: IMPORTANT for Arduino Unos! When enabled, the Z-limit pin D11 and spindle enable pin D12 switch!
-// The hardware PWM output on pin D11 is required for variable spindle output voltages.
-#define VARIABLE_SPINDLE // Default enabled. Comment to disable.
+IMPORTANT: When accessing Grbl via UGS (Universal Gcode Sender), you can use the command '$RST=*' to clear the EEPROM and enable default settings; otherwise, any earlier Grbl settings will be used.
