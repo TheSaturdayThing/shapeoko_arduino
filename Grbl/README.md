@@ -10,11 +10,12 @@ The recommended installation method is via the Arduino IDE:
   - Download the Grbl source code ZIP file from github
   - Unpack the zip file.
   - Copy the 'grbl' directory from the 'master-grbl' folder into your Arduino sketchbook's 'libraries' directory. 
-- Make required machine customizations to the library copy of config.h 
+- Make required machine customizations to the library copy of 'config.h' 
   - Change CPU pin map and default settings from "DEFAULTS_GENERIC" to "DEFAULTS_X_CARVE_500MM"   
-- Update the library copy of defaults.h file if required
-  - By default PWM spindle control is enabled, so Z limit will be on pin D12 instead of D11.
-  - X limit is still on D9, Y limit is still on D10
+  - By default, "#define VARIABLE_SPINDLE" enables PWM spindle control, which affects pins defined in 'cpu_map.h'
+    - X limit input: Use Arduino pin D9
+    - Y limit input: Use Arduino pin D10.
+    - Z limit input: if PWM spindle control is enabled, use Arduino pin D12 instead of D11
 - Launch the Arduino IDE and verify that 'grbl' is shown under "Sketch -> Include Library -> Contributed libraries"
 - Open the example sketch "File -> Examples -> grbl -> GrblUpload"
 - Connect to the Arduino and run the sketch to compile and upload Grbl to the Arduino.
