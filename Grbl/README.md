@@ -20,7 +20,10 @@ The recommended installation method is via the Arduino IDE:
 - Open the example sketch **File -> Examples -> grbl -> GrblUpload**
 - Connect to the Arduino and run the sketch to compile and upload **Grbl** to the Arduino.
 
-See https://github.com/TheSaturdayThing/shapeoko_arduino/tree/master/UGS for additional **Grbl** settings
-
 **IMPORTANT:** The Arduino EEPROM preserves settings from any previous installs. To clear the EEPROM and enable new default settings, you can use **UGS** (Universal Gcode Sender) to access the Arduino and issue the command **$RST=***
 
+See https://github.com/TheSaturdayThing/shapeoko_arduino/tree/master/UGS for additional changes to be made to **Grbl** settings
+- **$5=1** : Limit pins invert enabled (logic 1 on input pin indicates limit switch has triggered)
+- **$10=19** : Limit switch status reporting enabled
+- **$21=1**: Hard limits enabled
+- **$22=1**: Homing cycle enabled
