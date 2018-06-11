@@ -23,7 +23,6 @@ The recommended installation method is via the Arduino IDE:
 **IMPORTANT:** The Arduino EEPROM preserves settings from any previous installs. To clear the EEPROM and enable new default settings, you can use **UGS** (Universal Gcode Sender) to access the Arduino and issue the command **$RST=***
 
 See https://github.com/TheSaturdayThing/shapeoko_arduino/tree/master/UGS for additional changes to be made to **Grbl** settings
-- **$5=1** : Limit pins invert enabled (logic 1 on input pin indicates limit switch has triggered)
-- **$10=19** : Limit switch status reporting enabled
+- **$5=1** : Limit pins invert enabled (Logic 1 on input pin indicates limit switch has triggered. Limit switch state reporting is standard on v1.1: **?** returns which input pins are detected, ie **Pn:XYZ**)
 - **$21=1**: Hard limits enabled
 - **$22=1**: Homing cycle enabled
