@@ -11,7 +11,8 @@ Photocoupler:
 
 http://optoelectronics.liteon.com/en-global/Led/LED-Component/Detail/658
 
-Shield: 
+Shield:
+
 https://www.adafruit.com/product/2077
 
 https://github.com/adafruit/Adafruit-Proto-Shield-PCB
