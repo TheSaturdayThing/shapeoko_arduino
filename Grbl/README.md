@@ -9,7 +9,7 @@ The recommended installation method is via the Arduino IDE:
   - See https://www.arduino.cc/en/guide/libraries
   - Download the Grbl source code ZIP file from github
   - Unpack the zip file.
-  - Copy the 'grbl' directory from 'master-grbl' code into your Arduino sketchbook's 'libraries' directory. 
+  - Copy the 'grbl' directory from the 'master-grbl' folder into your Arduino sketchbook's 'libraries' directory. 
 - Make required machine customizations to the library copy of config.h 
   - Change CPU pin map and default settings from "DEFAULTS_GENERIC" to "DEFAULTS_X_CARVE_500MM"   
 - Update the library copy of defaults.h file if required
