@@ -2,6 +2,7 @@
 * **Grbl coordinates are in _negative_ space! See https://github.com/gnea/grbl/wiki/Frequently-Asked-Questions**
   * **See the 'Right Hand Rule' for coordinates: http://linuxcnc.org/docs/html/user/user-concepts.html#_machine_configurations**
 * **X-Carve build instructions have the limit switches wired as 'NO" (Normally Open). Since the Arduino pins have internal pullups, they will have a '1' input until a switch is hit and the pin is grounded to '0'.**
+* **It's a very common mistake when users test their hard limit switches and see that Grbl triggers a hard limit alarm. They assume that this means their limit switches are wired correctly. NOT TRUE. The Arduino AVR processor does not tell you what state the limit pin is in and which pin triggered (more advanced processors do tell you this). So, Grbl will trigger a hard limit upon any change in pin state. So, if you have your limit switches inverted somehow, you will have issues with the homing cycle.**
 * **Homing:** 
   * **Grbl's homing cycle assumes you have set up axes directions correctly. So on a standard mill, this means the positive directions for each axis is:** 
     * **Z-axis spindle moves up**
