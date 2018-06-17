@@ -1,12 +1,16 @@
 **Notes:** 
-
-* **X-Carve build instructions have the limit switches wired as 'NO" (Normally Open). Since the Arduino pins have internal pullups, they will have a '1' input until a switch is hit and the pin is grounded to '0'.**
 * **Grbl coordinates are in _negative_ space! See https://github.com/gnea/grbl/wiki/Frequently-Asked-Questions**
-* **Grbl's homing cycle assumes you have set up axes directions correctly. So on a standard mill, this means the positive directions for each axis is:** 
-  * **Z-axis spindle moves up**
-  * **Y-axis table moves toward you (or carriage moves away)**
-  * **X-axis table moves to the left (or carriage moves to the right).**
-* **See the 'Right Hand Rule' for coordinates: http://linuxcnc.org/docs/html/user/user-concepts.html#_machine_configurations**
+  * **See the 'Right Hand Rule' for coordinates: http://linuxcnc.org/docs/html/user/user-concepts.html#_machine_configurations**
+* **X-Carve build instructions have the limit switches wired as 'NO" (Normally Open). Since the Arduino pins have internal pullups, they will have a '1' input until a switch is hit and the pin is grounded to '0'.**
+* **Homing:** 
+  * **Grbl's homing cycle assumes you have set up axes directions correctly. So on a standard mill, this means the positive directions for each axis is:** 
+    * **Z-axis spindle moves up**
+    * **Y-axis table moves toward you (or carriage moves away)**
+    * **X-axis table moves to the left (or carriage moves to the right).**
+    * **If an axis is reversed you can either change the direction in the Grbl settings or rewire the motor.**
+  * **If it's not moving in the expected direction when you start the homing cycle and then it stops after a short distance (about 2.5 times $27 pull-off distance), then you likely have electrical interference problems. Grbl has detected your limit switch as triggered due the noise and skipped to the pull-off motion phase of the homing cycle. You will need to add noise filtering and shielding to your limit switches**
+  
+**Filtering Circuit**
 
 Optoisolator built on an Adafruit Proto Shield
 
