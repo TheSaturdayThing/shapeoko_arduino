@@ -1,5 +1,8 @@
-Optoisolator built on an Adafruit Proto Shield
+**Note: X-Carve build instructions have the limit switches wired as 'NO" (Normally Open).**
 
+**Since the Arduino pins have internal pullups, they will have a '1' input until a switch is hit and the pin is grounded to '0'.**
+
+Optoisolator built on an Adafruit Proto Shield
 
 References: 
 
