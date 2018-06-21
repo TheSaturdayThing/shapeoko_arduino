@@ -50,6 +50,7 @@ https://github.com/adafruit/Adafruit-Proto-Shield-PCB
 | D10 | Y-limit | yellow |
 | D12 | Z-limit | blue |
 
+* 1 KOhm pullups on the shield are much stronger than the Arduino internal signal pullups, so there should be no conflict. The internal pullups can be disabled by editing Grbl's config.h file to uncomment __#define DISABLE_LIMIT_PIN_PULL_UP__ and then recompiling/reflashing.
 * There is a jumper on the shield that connects the input side of the optoisolators to the Arduino +5VDC supply. Optionally the jumper could be switched to a separate +5V source in order to provide full isolation of inputs from the Arduino circuitry.
 * Originally the 4-pin DIP parts were socketed, but there was not enough retention force so they were soldered directly to the PCB.
 * In addition to the three limit switches, there is a fourth connector for an (optional) external reset switch (active low to reset). This signal is not optically isolated since the wiring will be short and within the control box, so the grounded shield should give adequate noise protection.
