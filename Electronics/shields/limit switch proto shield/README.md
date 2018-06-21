@@ -31,6 +31,25 @@ https://www.adafruit.com/product/2077
 
 https://github.com/adafruit/Adafruit-Proto-Shield-PCB
 
+**Notes**
+* Connector wiring
 
+| Pin | Signal | Color |
+| --- | ------ | ----- |
+| 1 | common | black |
+| 2 | signal | red |
+| 3 | shield | silver |
 
+* Pin 1 of the connector is marked with an arrow, however because the power and shield are both connected to ground on the board, the connector is reversible.
 
+* Arduino signal wiring
+
+| Pin | Signal | Color |
+| --- | ------ | ----- |
+| D9 | X-limit| red |
+| D10 | Y-limit | yellow |
+| D12 | Z-limit | blue |
+
+* There is a jumper on the shield that connects the input side of the optoisolators to the Arduino +5VDC supply. Optionally the jumper could be switched to a separate +5V source in order to provide full isolation of inputs from the Arduino circuitry.
+* Originally the 4-pin DIP parts were socketed, but there was not enough retention force so they were soldered directly to the PCB.
+* In addition to the three limit switches, there is a fourth connector for an (optional) external reset switch (active low to reset). This signal is not optically isolated since the wiring will be short and within the control box, so the grounded shield should give adequate noise protection.
